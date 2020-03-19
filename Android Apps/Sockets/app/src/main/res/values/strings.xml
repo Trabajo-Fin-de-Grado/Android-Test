@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Sockets</string>
+    <string name="hello">Hello World, Sockettest!</string>
+</resources>

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">My Second Application</string>
+    <string name="edit_name">Name</string>
+    <string name="edit_password">Password</string>
+    <string name="edit_email">Email</string>
+    <string name="edit_phone">Phone</string>
+    <string name="edit_postal_address">Address</string>
+    <string name="edit_date">Date</string>
+    <string name="send_button">Send</string>
+</resources>

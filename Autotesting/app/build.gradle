@@ -1,0 +1,47 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "esadrcanfer.us.alumno.autotesting"
+        minSdkVersion 25
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    packagingOptions {
+        exclude 'META-INF/spring.tooling'
+        exclude 'META-INF/spring.handlers'
+        exclude 'META-INF/spring.schemas'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/notice.txt'
+    }
+}
+
+dependencies {
+    implementation 'net.sf.extjwnl:extjwnl:2.0.1'
+    implementation 'net.sf.extjwnl:extjwnl-data-wn31:1.2'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    androidTestImplementation 'androidx.test.uiautomator:uiautomator:2.2.0'
+    implementation "org.springframework:spring-core:4.2.0.RELEASE"
+    implementation "org.springframework:spring-expression:4.2.0.RELEASE"
+    implementation "org.springframework:spring-context:4.2.0.RELEASE"
+}
+
