@@ -77,14 +77,17 @@ public class ReadUtil {
         if(sameSeed){
             seed = new Long(lines[1]);
         } else {
-            seed = new Random().nextLong();
+            seed = Math.abs(new Random().nextLong());
         }
         Integer actionsSize = new Integer(lines[2]);
         Random random = new Random(seed);
         String action = "";
         for(int i = 3; i<= actionsSize + 2; i++){
             action = lines[i];
-            testActions.add(generateActionFromString(action, random.nextInt()));
+            if (seed <  0)
+                testActions.add(generateActionFromString(action,  seed));
+            else
+                testActions.add(generateActionFromString(action, random.nextLong()));
             if(i == actionsSize+2){
                 actionsSize = i;
                 break;
@@ -109,7 +112,7 @@ public class ReadUtil {
         return testCase;
     }
 
-    public Action generateActionFromString(String action, Integer seed){
+    public Action generateActionFromString(String action, Long seed){
         String[] splitAction = action.split(","); // Dividir la cadena por comas
         String type = splitAction[0];       // Seleccionar el tipo de objeto (botón, cuadro de texto, radio button, etc.)
         String resourceId = splitAction[1]; // Selector del objeto sobre el que actuar
@@ -131,7 +134,7 @@ public class ReadUtil {
                 res = new ButtonAction(object);
                 break;
             case "TEXT":
-                TextInputGenerator textInputGenerator = new TextInputGenerator(seed);
+                TextInputGenerator textInputGenerator = new TextInputGenerator(seed, value);
                 res = new TextInputAction(object, textInputGenerator);
                 break;
             case "CHECKBOX":
@@ -152,12 +155,13 @@ public class ReadUtil {
         }
         Log.d("ISA", "Action: " + action);
         Log.d("ISA", "Value: " + value);
-        res.setValue(value);
+        res.setValue(value.trim());
         return res;
     }
 
-    public static Action generateActionFromSimpleString(String action, Integer seed){
+    public static Action generateActionFromSimpleString(String action, Long seed){
         Log.d("ISA", action);
+        String value = null;
         String[] splitAction = action.split(",");
         String type = splitAction[0];
         String resourceId = splitAction[1];
@@ -169,7 +173,7 @@ public class ReadUtil {
                 res = new ButtonAction(object);
                 break;
             case "TEXT":
-                TextInputGenerator textInputGenerator = new TextInputGenerator(seed);
+                TextInputGenerator textInputGenerator = new TextInputGenerator(seed, value);
                 res = new TextInputAction(object, textInputGenerator);
                 break;
             case "CHECKBOX":

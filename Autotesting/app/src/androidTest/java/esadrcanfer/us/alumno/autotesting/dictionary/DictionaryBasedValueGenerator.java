@@ -26,15 +26,15 @@ public class DictionaryBasedValueGenerator {
 
     public DictionaryBasedValueGenerator()
     {
-        this(DEFAULT_NUMBER_OF_WORDS,DEFAULT_NUMBER_OF_WORDS, new Random().nextInt());
+        this(DEFAULT_NUMBER_OF_WORDS,DEFAULT_NUMBER_OF_WORDS, new Random().nextLong());
     }
-    public DictionaryBasedValueGenerator(int words, Integer seed) {
+    public DictionaryBasedValueGenerator(int words, Long seed) {
         this(words,words, seed);
     }    
     
     
     
-    public DictionaryBasedValueGenerator(int minWords,int maxWords, Integer seed) {
+    public DictionaryBasedValueGenerator(int minWords,int maxWords, Long seed) {
         this.minWords=minWords;
         this.maxWords = maxWords;
         this.randomGenerator = new Random(seed);

@@ -56,7 +56,7 @@ public class INAGraphBuilder {
     }
 
     public void createActions(Node node, UiDevice device) {
-        Map<UiObject, Action> actions = ActionFactory.createActions(device,  new Random().nextInt());
+        Map<UiObject, Action> actions = ActionFactory.createActions(device,  new Random().nextLong());
         node.getControls().addAll(actions.keySet());
         node.getAvailableActions().addAll(actions.values());
     }
@@ -110,7 +110,7 @@ public class INAGraphBuilder {
 
     public boolean isSameNode(Node currentNode, UiDevice device) throws UiObjectNotFoundException {
         boolean result = true;
-        List<Action> actions = new ArrayList<>(ActionFactory.createActions(device, new Random().nextInt()).values());
+        List<Action> actions = new ArrayList<>(ActionFactory.createActions(device, new Random().nextLong()).values());
         for (int i = 0; i < actions.size() && result; i++)
             result = (result && currentNode.getAvailableActions().contains(actions.get(i)));
         result = (result && currentNode.getAvailableActions().size() == (actions.size()));

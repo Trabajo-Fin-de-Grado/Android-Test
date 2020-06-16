@@ -35,7 +35,7 @@ public class WriterUtil {
 		return logFile;
 	}
 
-	public void write(TestCase testCase, int seed){
+	public void write(TestCase testCase, Long seed){
 		write(testCase.getAppPackage());
 		write(String.valueOf(seed));
 		write(String.valueOf(testCase.getTestActions().size()));
