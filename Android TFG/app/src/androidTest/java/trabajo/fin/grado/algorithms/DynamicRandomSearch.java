@@ -63,7 +63,7 @@ public class DynamicRandomSearch {
             }
             startApp(appPackage);
             testCaseActions = new ArrayList<>();
-            availableActions = createAction(device, seeds.nextInt());
+            availableActions = createAction(device, seeds.nextLong());
             while(testCaseActions.size()<actionsLength && availableActions.size() > 0){
                 chosenAction=availableActions.get(getRandom().nextInt(availableActions.size()));
                 testCaseActions.add(chosenAction);
@@ -76,7 +76,7 @@ public class DynamicRandomSearch {
                 if(!appName.equals(appPackage)){
                     break;
                 }
-                availableActions = createAction(device, seeds.nextInt());
+                availableActions = createAction(device, seeds.nextLong());
             }
             Log.d("TFG", "Eval: " + eval);
             if(eval>currentBestEval){
@@ -106,7 +106,7 @@ public class DynamicRandomSearch {
         return new TestCase(appPackage, Collections.EMPTY_SET,beforeActions,testActions,afterActions, new ArrayList<>(), new ArrayList<>());
     }
 
-    private List<Action> createAction(UiDevice device, Integer seed) {
+    private List<Action> createAction(UiDevice device, Long seed) {
         Map<UiObject, Action> actions;
         actions = ActionFactory.createActions(device, seed);
         return new ArrayList<>(actions.values());

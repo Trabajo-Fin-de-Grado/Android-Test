@@ -1,8 +1,8 @@
-package esadrcanfer.us.alumno.autotesting.testUIAutomator;
+package trabajo.fin.grado.testUIAutomator;
 
-import android.support.test.InstrumentationRegistry;
-import android.support.test.filters.SdkSuppress;
-import android.support.test.runner.AndroidJUnit4;
+import androidx.test.InstrumentationRegistry;
+import androidx.test.filters.SdkSuppress;
+import androidx.test.runner.AndroidJUnit4;
 import androidx.test.uiautomator.By;
 import androidx.test.uiautomator.UiDevice;
 import androidx.test.uiautomator.UiObject;
@@ -15,7 +15,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import static android.support.test.InstrumentationRegistry.getInstrumentation;
+import static androidx.test.InstrumentationRegistry.getInstrumentation;
 import static org.hamcrest.core.IsNull.notNullValue;
 import static org.junit.Assert.assertThat;
 
@@ -109,7 +109,7 @@ public class TestClock {
 
         //UiObject ringtone = mDevice.findObject(new UiSelector().resourceId("com.android.deskclock:id/choose_ringtone"));
         // UiObject ringtone = mDevice.findObject(new UiSelector().description("Ringtone Default (Cesium)"));
-        UiObject ringtone = mDevice.findObject(new UiSelector().descriptionContains("Ringtone "));
+        UiObject ringtone = mDevice.findObject(new UiSelector().textStartsWith("Default"));
         ringtone.click();
 
         UiScrollable ringtoneViews = new UiScrollable(new UiSelector().scrollable(true));
@@ -196,23 +196,11 @@ public class TestClock {
         UiObject saturday = mDevice.findObject(new UiSelector().description("Saturday"));
         saturday.click();
 
-        // UiObject checkBox = mDevice.findObject(new UiSelector().resourceId("com.android.deskclock:id/onoff"));
+        expansion.click();
+
+        //UiObject checkBox = mDevice.findObject(new UiSelector().resourceId("com.android.deskclock:id/onoff"));
         UiObject checkBox = mDevice.findObject(new UiSelector().text("Repeat"));
         if (!checkBox.isSelected()) checkBox.click();
-
-        UiObject time = mDevice.findObject(new UiSelector().resourceId("com.google.android.deskclock:id/digital_clock"));
-        time.click();
-
-        UiObject hour = mDevice.findObject(new UiSelector().description("10"));
-        hour.click();
-
-        UiObject minute = mDevice.findObject(new UiSelector().description("30"));
-        minute.click();
-
-        UiObject confirm = mDevice.findObject(new UiSelector().resourceId("android:id/button1"));
-        confirm.click();
-
-        expansion.click();
     }
 
 
@@ -268,9 +256,8 @@ public class TestClock {
         // UiObject play = mDevice.findObject(new UiSelector().resourceId("com.google.android.deskclock:id/fab"));
         UiObject play = mDevice.findObject(new UiSelector().description("Start"));
         play.click();
-
+        play.waitUntilGone(20000);
         UiObject stop = mDevice.findObject(new UiSelector().description("Stop"));
-        stop.waitUntilGone(20000);
         stop.click();
 
         // UiObject delete = mDevice.findObject(new UiSelector().resourceId("com.google.android.deskclock:id/left_button"));

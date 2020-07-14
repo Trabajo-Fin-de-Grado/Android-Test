@@ -1,14 +1,13 @@
-package esadrcanfer.us.alumno.autotesting.testUIAutomator;
+package trabajo.fin.grado.testUIAutomator;
 
 import android.content.Context;
-import android.support.test.InstrumentationRegistry;
-import android.support.test.filters.SdkSuppress;
-import android.support.test.runner.AndroidJUnit4;
+import androidx.test.InstrumentationRegistry;
+import androidx.test.filters.SdkSuppress;
+import androidx.test.runner.AndroidJUnit4;
 import androidx.test.uiautomator.By;
 import androidx.test.uiautomator.UiDevice;
 import androidx.test.uiautomator.UiObject;
 import androidx.test.uiautomator.UiObjectNotFoundException;
-import androidx.test.uiautomator.UiScrollable;
 import androidx.test.uiautomator.UiSelector;
 import androidx.test.uiautomator.Until;
 
@@ -16,7 +15,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import static android.support.test.InstrumentationRegistry.getInstrumentation;
+import static androidx.test.InstrumentationRegistry.getInstrumentation;
 import static org.hamcrest.core.IsNull.notNullValue;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
@@ -76,12 +75,11 @@ public class TestChrome {
         UiObject text = mDevice.findObject(new UiSelector().resourceId("com.android.chrome:id/url_bar"));
         text.setText("UI Automator");
 
-        // UiObject option = mDevice.findObject(new UiSelector().text("UI Automator"));
-        UiObject option = mDevice.findObject(new UiSelector().className("android.widget.TextView").index(0));
-        option.click();
+        UiObject option = mDevice.findObject(new UiSelector().text("UI Automator"));
+        option.clickAndWaitForNewWindow();
 
         // UiScrollable appViews = new UiScrollable(new UiSelector().scrollable(true));
-        // appViews.scrollIntoView(new UiSelector().textContains("Android › developer › testing"));
+        //appViews.scrollIntoView(new UiSelector().text("Android › developer › testing › ui-a..."));
 
         UiObject select = mDevice.findObject(new UiSelector().textStartsWith("Android › developer › testing"));
         select.click();
@@ -104,9 +102,8 @@ public class TestChrome {
         UiObject text = mDevice.findObject(new UiSelector().resourceId("com.android.chrome:id/url_bar"));
         text.setText("SCRUM");
 
-        // UiObject option = mDevice.findObject(new UiSelector().text("SCRUM"));
-        UiObject option = mDevice.findObject(new UiSelector().className("android.widget.TextView").index(0));
-        option.click();
+        UiObject option = mDevice.findObject(new UiSelector().text("SCRUM"));
+        option.clickAndWaitForNewWindow();
 
         UiObject images = mDevice.findObject(new UiSelector().text("IMAGES"));
         images.clickAndWaitForNewWindow();
@@ -139,7 +136,7 @@ public class TestChrome {
         UiObject testingApp = mDevice.findObject(new UiSelector().text("Chrome"));
         testingApp.clickAndWaitForNewWindow();
 
-        UiObject options = mDevice.findObject(new UiSelector().descriptionContains("More options"));
+        UiObject options = mDevice.findObject(new UiSelector().description("More options"));
         options.click();
 
         UiObject history = mDevice.findObject(new UiSelector().text("History"));

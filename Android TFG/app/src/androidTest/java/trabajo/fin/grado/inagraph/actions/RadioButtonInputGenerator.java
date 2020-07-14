@@ -10,8 +10,8 @@ import java.util.Random;
 
 public class RadioButtonInputGenerator extends InputGenerator {
 
-    Integer seed;
-    public RadioButtonInputGenerator(Integer seed){
+    Long seed;
+    public RadioButtonInputGenerator(Long seed){
         this.seed = seed;
     }
 

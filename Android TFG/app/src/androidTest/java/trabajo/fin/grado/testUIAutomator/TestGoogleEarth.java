@@ -1,9 +1,9 @@
-package esadrcanfer.us.alumno.autotesting.testUIAutomator;
+package trabajo.fin.grado.testUIAutomator;
 
 import android.content.Context;
-import android.support.test.InstrumentationRegistry;
-import android.support.test.filters.SdkSuppress;
-import android.support.test.runner.AndroidJUnit4;
+import androidx.test.InstrumentationRegistry;
+import androidx.test.filters.SdkSuppress;
+import androidx.test.runner.AndroidJUnit4;
 import androidx.test.uiautomator.By;
 import androidx.test.uiautomator.UiDevice;
 import androidx.test.uiautomator.UiObject;
@@ -16,7 +16,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import static android.support.test.InstrumentationRegistry.getInstrumentation;
+import static androidx.test.InstrumentationRegistry.getInstrumentation;
 import static org.hamcrest.core.IsNull.notNullValue;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
@@ -80,12 +80,8 @@ public class TestGoogleEarth {
         UiObject testingApp = mDevice.findObject(new UiSelector().text("Earth"));
         testingApp.clickAndWaitForNewWindow();
 
-        UiObject menu = mDevice.findObject(new UiSelector().description("Open navigation drawer"));
-        menu.click();
-
-        // UiObject button = mDevice.findObject(new UiSelector().resourceId("com.google.earth:id/toolbar_search"));
-        UiObject button = mDevice.findObject(new UiSelector().text("Search"));
-        button.click();
+        UiObject button = mDevice.findObject(new UiSelector().description("Search"));
+        button.clickAndWaitForNewWindow();
 
         // UiObject location = mDevice.findObject(new UiSelector().text("Search Google Earth"));
         UiObject location = mDevice.findObject(new UiSelector().textContains("Search"));
@@ -93,10 +89,10 @@ public class TestGoogleEarth {
 
         // UiObject option = mDevice.findObject(new UiSelector().text("Avenida Reina Mercedes, Seville, Spain"));
         UiObject option = mDevice.findObject(new UiSelector().text("Avenida Reina Mercedes, Seville"));
-        option.click();
+        option.clickAndWaitForNewWindow();
 
         UiObject select = mDevice.findObject(new UiSelector().description("Fly here"));
-        select.click();
+        select.clickAndWaitForNewWindow();
     }
 
     // UiObject editor = mDevice.findObject(new UiSelector().text("Editor's Picks"));
@@ -122,26 +118,19 @@ public class TestGoogleEarth {
         appViews.scrollIntoView(new UiSelector().text("Earth"));
 
         UiObject testingApp = mDevice.findObject(new UiSelector().text("Earth"));
-        testingApp.click();
+        testingApp.clickAndWaitForNewWindow();
 
-        UiObject menu = mDevice.findObject(new UiSelector().description("Open navigation drawer"));
-        menu.click();
-
-        // UiObject button = mDevice.findObject(new UiSelector().resourceId("com.google.earth:id/toolbar_feed"));
-        UiObject button = mDevice.findObject(new UiSelector().text("Voyager"));
+        UiObject button = mDevice.findObject(new UiSelector().description("Voyager"));
         button.click();
 
         UiObject option = mDevice.findObject(new UiSelector().text("Nature"));
-        option.click();
+        option.clickAndWaitForNewWindow();
 
         UiScrollable scroll = new UiScrollable(new UiSelector().scrollable(false));
         scroll.scrollIntoView(new UiSelector().text("Visit Yellowstone National Park"));
 
         UiObject select = mDevice.findObject(new UiSelector().text("Visit Yellowstone National Park"));
-        select.click();
-
-        UiObject go = mDevice.findObject(new UiSelector().text("LET'S GO"));
-        go.click();
+        select.clickAndWaitForNewWindow();
 
     }
 
@@ -159,7 +148,6 @@ public class TestGoogleEarth {
         UiObject testingApp = mDevice.findObject(new UiSelector().text("Earth"));
         testingApp.clickAndWaitForNewWindow();
 
-        // UiObject button = mDevice.findObject(new UiSelector().resourceId("com.google.earth:id/toolbar_feeling_lucky"));
         UiObject button = mDevice.findObject(new UiSelector().description("I'm Feeling Lucky"));
         button.click();
 

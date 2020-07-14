@@ -1,8 +1,8 @@
-package esadrcanfer.us.alumno.autotesting.testUIAutomator;
+package trabajo.fin.grado.testUIAutomator;
 
-import android.support.test.InstrumentationRegistry;
-import android.support.test.filters.SdkSuppress;
-import android.support.test.runner.AndroidJUnit4;
+import androidx.test.InstrumentationRegistry;
+import androidx.test.filters.SdkSuppress;
+import androidx.test.runner.AndroidJUnit4;
 import androidx.test.uiautomator.By;
 import androidx.test.uiautomator.UiDevice;
 import androidx.test.uiautomator.UiObject;
@@ -15,7 +15,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import static android.support.test.InstrumentationRegistry.getInstrumentation;
+import static androidx.test.InstrumentationRegistry.getInstrumentation;
 import static org.hamcrest.core.IsNull.notNullValue;
 import static org.junit.Assert.assertThat;
 
@@ -70,7 +70,7 @@ public class TestGoogleDrive {
         folder.click();
 
         UiObject text = mDevice.findObject(new UiSelector().resourceId("com.google.android.apps.docs:id/edit_text"));
-        text.setText("Trabajo Fin de Grado 3.0");
+        text.setText("Trabajo Fin de Grado 2.0");
 
         UiObject create = mDevice.findObject(new UiSelector().resourceId("com.google.android.apps.docs:id/positive_button"));
         create.click();
@@ -91,9 +91,9 @@ public class TestGoogleDrive {
         testingApp.clickAndWaitForNewWindow();
 
         UiScrollable scroll = new UiScrollable(new UiSelector().scrollable(true));
-        scroll.scrollIntoView(new UiSelector().text("Trabajo Fin de Grado 3.0"));
+        scroll.scrollIntoView(new UiSelector().text("Trabajo Fin de Grado 2.0"));
 
-        UiObject folder = mDevice.findObject(new UiSelector().description("More actions for Trabajo Fin de Grado 3.0"));
+        UiObject folder = mDevice.findObject(new UiSelector().description("More actions for Trabajo Fin de Grado 2.0"));
         folder.click();
 
         UiScrollable scroll2 = new UiScrollable(new UiSelector().scrollable(false));

@@ -1,8 +1,8 @@
-package esadrcanfer.us.alumno.autotesting.testUIAutomator;
+package trabajo.fin.grado.testUIAutomator;
 
-import android.support.test.InstrumentationRegistry;
-import android.support.test.filters.SdkSuppress;
-import android.support.test.runner.AndroidJUnit4;
+import androidx.test.InstrumentationRegistry;
+import androidx.test.filters.SdkSuppress;
+import androidx.test.runner.AndroidJUnit4;
 import androidx.test.uiautomator.By;
 import androidx.test.uiautomator.UiDevice;
 import androidx.test.uiautomator.UiObject;
@@ -15,7 +15,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import static android.support.test.InstrumentationRegistry.getInstrumentation;
+import static androidx.test.InstrumentationRegistry.getInstrumentation;
 import static org.hamcrest.core.IsNull.notNullValue;
 import static org.junit.Assert.assertThat;
 
@@ -76,7 +76,7 @@ public class TestGoogleNotes {
         title.setText("UI Automator");
 
         UiObject description = mDevice.findObject(new UiSelector().text("Note"));
-        description.setText("Prueba UI Automator");
+        description.setText("Prueba crear nota UI Automator");
 
         UiObject close = mDevice.findObject(new UiSelector().description("Navigate up"));
         close.click();
@@ -116,10 +116,10 @@ public class TestGoogleNotes {
         drive.click();
 
         UiScrollable scroll = new UiScrollable(new UiSelector().scrollable(false));
-        scroll.scrollIntoView(new UiSelector().text("SCRUM.png"));
+        scroll.scrollIntoView(new UiSelector().resourceId("com.android.documentsui:id/icon_mime_lg"));
 
-        UiObject file = mDevice.findObject(new UiSelector().text("SCRUM.png"));
-        file.click();
+        UiObject file = mDevice.findObject(new UiSelector().resourceId("com.android.documentsui:id/icon_mime_lg"));
+        file.clickAndWaitForNewWindow();
 
         UiObject close = mDevice.findObject(new UiSelector().description("Navigate up"));
         close.click();

@@ -11,18 +11,20 @@ import trabajo.fin.grado.dictionary.DictionaryBasedValueGenerator;
 
 public class TextInputGenerator extends InputGenerator {
 
-    Integer seed;
+    private Long seed;
+    private String defaultValue;
 
-    public TextInputGenerator(Integer seed){
+    public TextInputGenerator(Long seed, String defaultValue){
         this.seed = seed;
+        this.setDefaultValue(defaultValue);
     }
 
     public String generateInput(UiObject object) throws UiObjectNotFoundException {
-        String value = null;
+        String value = getDefaultValue();
 
-        DictionaryBasedValueGenerator dictionary = new DictionaryBasedValueGenerator(1, seed);
+        DictionaryBasedValueGenerator dictionary = new DictionaryBasedValueGenerator(1, getSeed());
         try {
-            if(seed>0)
+            if(getSeed() > 0 || defaultValue == null)
                 value = dictionary.generate().toString();
             Log.d("TFG", value);
             object.setText(value);
@@ -30,10 +32,18 @@ public class TextInputGenerator extends InputGenerator {
             e.printStackTrace();
         }
 
-
         return value;
     }
 
+    public Long getSeed() {
+        return seed;
+    }
 
+    public String getDefaultValue() {
+        return defaultValue;
+    }
 
+    public void setDefaultValue(String defaultValue) {
+        this.defaultValue = defaultValue;
+    }
 }

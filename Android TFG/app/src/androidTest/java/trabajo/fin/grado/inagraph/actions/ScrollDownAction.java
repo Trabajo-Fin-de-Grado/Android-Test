@@ -12,17 +12,18 @@ public class ScrollDownAction extends Action{
 
     @Override
     public void perform() throws UiObjectNotFoundException {
-        UiScrollable appViews = (UiScrollable) target;
-        if(value.startsWith("Elements=")) {
+
+        UiScrollable appViews =  new UiScrollable(target.getSelector());
+
+        if (value.startsWith("Elements=")) {
             appViews.scrollToEnd(Integer.valueOf(value.replace("Elements=","")));
-        }else if(value.startsWith("toElementById=")){
+        } else if (value.startsWith("toElementById=")) {
             appViews.scrollIntoView(new UiSelector().resourceId(value.replace("toElementById=","")));
-        }else if(value.startsWith("toElementByText=")){
+        } else if (value.startsWith("toElementByText=")) {
             appViews.scrollIntoView(new UiSelector().text(value.replace("toElementByText=","")));
-        }else if(value.startsWith("toElementByDescription=")){
+        } else if (value.startsWith("toElementByDescription=")) {
             appViews.scrollIntoView(new UiSelector().description(value.replace("toElementByDescription=","")));
-        }else if(value.startsWith("toEnd")){
+        } else
             appViews.scrollToEnd(Integer.MAX_VALUE);
-        }
     }
 }

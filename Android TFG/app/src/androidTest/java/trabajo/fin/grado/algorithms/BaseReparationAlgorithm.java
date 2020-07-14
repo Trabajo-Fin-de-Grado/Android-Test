@@ -29,7 +29,7 @@ public abstract class BaseReparationAlgorithm implements ReparationAlgorithm {
     protected Double currentOptimum;
 
 
-    protected List<Action> createAction(UiDevice device, Integer seed) {
+    protected List<Action> createAction(UiDevice device, Long seed) {
         Map<UiObject, Action> actions;
         actions = ActionFactory.createActions(device, seed);
         return new ArrayList<>(actions.values());

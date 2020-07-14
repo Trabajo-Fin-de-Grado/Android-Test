@@ -27,7 +27,7 @@ public class Tests {
         long iterations = 5;
 
 
-        // TEST GOOGLE NOTES
+        // TEST GOOGLE NOTES Funciona API 25, 27, 28, 29
 
         // ReadUtil readUtil = new ReadUtil("Download/Google Notes/TestCreateGoogleNotes.txt", true);
         // ReadUtil readUtil = new ReadUtil("Download/Google Notes/TestEditGoogleNotes.txt", true);
@@ -35,34 +35,34 @@ public class Tests {
         // ReadUtil readUtil = new ReadUtil("Download/Google Notes/TestListGoogleNotes.txt", true);
         // ReadUtil readUtil = new ReadUtil("Download/Google Notes/TestReminderGoogleNotes.txt", true);
 
-        // TEST GOOGLE MAPS
+        // TEST GOOGLE MAPS Funciona API 25, 27, 28, 29
 
         // ReadUtil readUtil = new ReadUtil("Download/Google Maps/TestJourneyGoogleMaps.txt", true);
         // ReadUtil readUtil = new ReadUtil("Download/Google Maps/TestSearchGoogleMaps.txt", true);
         // ReadUtil readUtil = new ReadUtil("Download/Google Maps/TestShareLocationGoogleMaps.txt", true);
 
-        // TEST GOOGLE DOCS
+        // TEST GOOGLE DOCS Funciona API 25, 27, 28, 29
 
         // ReadUtil readUtil = new ReadUtil("Download/Google Docs/CreateGoogleDocs.txt", true);
         // ReadUtil readUtil = new ReadUtil("Download/Google Docs/EditGoogleDocs.txt", true);
         // ReadUtil readUtil = new ReadUtil("Download/Google Docs/DeleteGoogleDocs.txt", true);
         // ReadUtil readUtil = new ReadUtil("Download/Google Docs/SendCopyGoogleDocs.txt", true);
 
-        // TEST GOOGLE SLIDE
+        // TEST GOOGLE SLIDE Funciona API 25, 27, 28, 29
 
         // ReadUtil readUtil = new ReadUtil("Download/Google Slides/CreateGoogleSlides.txt", true);
         // ReadUtil readUtil = new ReadUtil("Download/Google Slides/EditGoogleSlides.txt", true);
         // ReadUtil readUtil = new ReadUtil("Download/Google Slides/DeleteGoogleSlides.txt", true);
         // ReadUtil readUtil = new ReadUtil("Download/Google Slides/SendCopyGoogleSlides.txt", true);
 
-        // TEST GOOGLE SHEETS
+        // TEST GOOGLE SHEETS Funciona API 25, 27, 28, 29
 
         // ReadUtil readUtil = new ReadUtil("Download/Google Sheets/CreateGoogleSheets.txt", true);
         // ReadUtil readUtil = new ReadUtil("Download/Google Sheets/EditGoogleSheets.txt", true);
         // ReadUtil readUtil = new ReadUtil("Download/Google Sheets/DeleteGoogleSheets.txt", true);
         // ReadUtil readUtil = new ReadUtil("Download/Google Sheets/SendCopyGoogleSheets.txt", true);
 
-        // TEST GOOGLE DRIVE Funciona API 29,
+        // TEST GOOGLE DRIVE Funciona API 25, 27, 28, 29
 
         // ReadUtil readUtil = new ReadUtil("Download/Google Drive/CreateFolderGoogleDrive.txt", true);
         // ReadUtil readUtil = new ReadUtil("Download/Google Drive/DeleteFolderGoogleDrive.txt", true);
@@ -79,37 +79,37 @@ public class Tests {
         // ReadUtil readUtil = new ReadUtil("Download/Google Drive/DeleteGoogleSlide.txt", true);
         // ReadUtil readUtil = new ReadUtil("Download/Google Drive/DeleteGoogleSheet.txt", true);
 
-        // TEST GOOGLE CALENDAR
+        // TEST GOOGLE CALENDAR // Funciona en API 25, 27, 28, 29
 
         // ReadUtil readUtil = new ReadUtil("Download/Google Calendar/TestCreateEvent.txt", true);
-        // ReadUtil readUtil = new ReadUtil("Download/Google Calendar/TestEditEvent.txt", true); // Revisar
+        // ReadUtil readUtil = new ReadUtil("Download/Google Calendar/TestEditEvent.txt", true);
         // ReadUtil readUtil = new ReadUtil("Download/Google Calendar/TestDeleteEvent.txt", true);
 
-        // TEST GOOGLE EARTH // Funciona en API 29,
+        // TEST GOOGLE EARTH // Funciona en API 25(a veces falla), 27, 28, 29
 
         // ReadUtil readUtil = new ReadUtil("Download/Google Earth/TestLuckGoogleEarth.txt", true);
         // ReadUtil readUtil = new ReadUtil("Download/Google Earth/TestSearchGoogleEarth.txt", true);
         // ReadUtil readUtil = new ReadUtil("Download/Google Earth/TestVoyagerGoogleEarth.txt", true);
 
-        // TEST GOOGLE CHROME // Funciona API 29,
+        // TEST GOOGLE CHROME // Funciona API 25, 27, 28, 29
 
         // ReadUtil readUtil = new ReadUtil("Download/Google Chrome/TestSearchGoogleChrome.txt", true);
         // ReadUtil readUtil = new ReadUtil("Download/Google Chrome/TestClearHistoryGoogleChrome.txt", true);
-        // ReadUtil readUtil = new ReadUtil("Download/Google Chrome/TestShareImageGoogleChrome.txt", true); // El nombre al fichero no es correcto
+        // ReadUtil readUtil = new ReadUtil("Download/Google Chrome/TestShareImageGoogleChrome.txt", true);
 
-        // TEST GMAIL
+        // TEST GMAIL // Funciona 25, 27, 28, 29
 
         // ReadUtil readUtil = new ReadUtil("Download/Gmail/TestSendEmail.txt", true);
         // ReadUtil readUtil = new ReadUtil("Download/Gmail/TestEditDraft.txt", true);
         // ReadUtil readUtil = new ReadUtil("Download/Gmail/TestDeleteEmail.txt", true);
         // ReadUtil readUtil = new ReadUtil("Download/Gmail/TestEmptyTrash.txt", true);
 
-        // TEST GOOGLE PLAY MOVIES // funciona
+        // TEST GOOGLE PLAY MOVIES // Funciona 25, 27, 28, 29
 
         // ReadUtil readUtil = new ReadUtil("Download/Play Movies/TestPlayMovies.txt", true);
         // ReadUtil readUtil = new ReadUtil("Download/Play Movies/TestSearchMovies.txt", true);
 
-        // TEST GOOGLE PLAY MUSIC
+        // TEST GOOGLE PLAY MUSIC // Funciona API 25, 27, 28, 29
 
         // ReadUtil readUtil = new ReadUtil("Download/Play Music/TestNextSong.txt", true);
         // ReadUtil readUtil = new ReadUtil("Download/Play Music/TestPlayMusic.txt", true);
@@ -117,18 +117,18 @@ public class Tests {
         // ReadUtil readUtil = new ReadUtil("Download/Play Music/TestPreviousSong.txt", true);
         // ReadUtil readUtil = new ReadUtil("Download/Play Music/TestSearchSong.txt", true);
 
-        // TEST GOOGLE PLAY BOOKS // funciona
+        // TEST GOOGLE PLAY BOOKS // Funciona API 25, 27, 28, 29
 
         // ReadUtil readUtil = new ReadUtil("Download/Play Books/TestSearchBook.txt", true);
         // ReadUtil readUtil = new ReadUtil("Download/Play Books/TestDeleteBook.txt", true);
         // ReadUtil readUtil = new ReadUtil("Download/Play Books/TestSearchGender.txt", true);
 
-        // TEST GOOGLE PLAY GAMES // funciona
+        // TEST GOOGLE PLAY GAMES // Funciona API 25, 27, 28, 29
 
         // ReadUtil readUtil = new ReadUtil("Download/Play Games/TestPlayGame.txt", true);
         // ReadUtil readUtil = new ReadUtil("Download/Play Games/TestSearchGame.txt", true);
 
-        // TEST GOOGLE PLAY STORE // funciona
+        // TEST GOOGLE PLAY STORE // Funciona API 25, 27, 28, 29
 
         // ReadUtil readUtil = new ReadUtil("Download/Play Store/TestInstallApplication.txt", true);
         // ReadUtil readUtil = new ReadUtil("Download/Play Store/TestUninstallApplication.txt", true);
@@ -136,38 +136,40 @@ public class Tests {
         // ReadUtil readUtil = new ReadUtil("Download/Play Store/TestRemoveApplication.txt", true);
         // ReadUtil readUtil = new ReadUtil("Download/Play Store/TestSearchApplication.txt", true);
 
-        // TEST GOOGLE TRANSLATE // funciona
+        // TEST GOOGLE TRANSLATE // Funciona API 25, 27, 28, 29
 
-        ReadUtil readUtil = new ReadUtil("Download/Google Translate/TestTraductor.txt", true);
+         ReadUtil readUtil = new ReadUtil("Download/Google Translate/TestTraductor.txt", true);
+        // ReadUtil readUtil = new ReadUtil("Download/Google Translate/TestCambiarIdioma.txt", true); // NO
 
-        // TEST YOUTUBE // funciona
+        // TEST YOUTUBE // Funciona API 25, 27, 28, 29
 
         // ReadUtil readUtil = new ReadUtil("Download/YouTube/TestChangeQuality.txt", true);
         // ReadUtil readUtil = new ReadUtil("Download/YouTube/TestChangeVelocity.txt", true);
         // ReadUtil readUtil = new ReadUtil("Download/YouTube/TestShareVideo.txt", true);
         // ReadUtil readUtil = new ReadUtil("Download/YouTube/TestSearchVideo.txt", true);
 
-        // TEST CALCULATOR // funciona
+        // TEST CALCULATOR // Funciona API 25, 27, 28, 29
 
         // ReadUtil readUtil = new ReadUtil("Download/Calculator/TestSuma.txt", true);
         // ReadUtil readUtil = new ReadUtil("Download/Calculator/TestResta.txt", true);
         // ReadUtil readUtil = new ReadUtil("Download/Calculator/TestMultiplicación.txt", true);
         // ReadUtil readUtil = new ReadUtil("Download/Calculator/TestDivisión.txt", true);
 
-        // TEST CONTACT // funciona
+        // TEST CONTACT // Funciona 25, 27, 28, 29
 
         // ReadUtil readUtil = new ReadUtil("Download/Contacts/TestCreateContact.txt", true);
+        // ReadUtil readUtil = new ReadUtil("Download/Contacts/TestEditContact.txt", true);
         // ReadUtil readUtil = new ReadUtil("Download/Contacts/TestDeleteContact.txt", true);
         // ReadUtil readUtil = new ReadUtil("Download/Contacts/TestFavoriteContact.txt", true);
 
-        // TEST CLOCK Funciona API 29,
+        // TEST CLOCK Funciona API 25, 27, 28, 29
 
         // ReadUtil readUtil = new ReadUtil("Download/Clock/TestAlarm.txt", true);
         // ReadUtil readUtil = new ReadUtil("Download/Clock/TestOtherAlarm.txt", true);
         // ReadUtil readUtil = new ReadUtil("Download/Clock/TestStopWatch.txt", true);
         // ReadUtil readUtil = new ReadUtil("Download/Clock/TestTimer.txt", true);
 
-        // TEST PHONE Funciona 29,
+        // TEST PHONE Funciona 25, 27, 28, 29
 
         // ReadUtil readUtil = new ReadUtil("Download/Phone/TestCallContact.txt", true);
         // ReadUtil readUtil = new ReadUtil("Download/Phone/TestCallPhone.txt", true);
@@ -175,7 +177,7 @@ public class Tests {
         // ReadUtil readUtil = new ReadUtil("Download/Phone/TestDeleteFavorites.txt", true);
         // ReadUtil readUtil = new ReadUtil("Download/Phone/TestClearCallHistory.txt", true);
 
-        // TEST MESSAGES Funciona
+        // TEST MESSAGES Funciona 25, 27, 28, 29
 
         // ReadUtil readUtil = new ReadUtil("Download/Messages/TestSendIcon.txt", true);
         // ReadUtil readUtil = new ReadUtil("Download/Messages/TestSendMessage.txt", true);

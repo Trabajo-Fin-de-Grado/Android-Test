@@ -1,8 +1,8 @@
-package esadrcanfer.us.alumno.autotesting.testUIAutomator;
+package trabajo.fin.grado.testUIAutomator;
 
-import android.support.test.InstrumentationRegistry;
-import android.support.test.filters.SdkSuppress;
-import android.support.test.runner.AndroidJUnit4;
+import androidx.test.InstrumentationRegistry;
+import androidx.test.filters.SdkSuppress;
+import androidx.test.runner.AndroidJUnit4;
 import androidx.test.uiautomator.By;
 import androidx.test.uiautomator.UiDevice;
 import androidx.test.uiautomator.UiObject;
@@ -15,16 +15,16 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import static android.support.test.InstrumentationRegistry.getInstrumentation;
+import static androidx.test.InstrumentationRegistry.getInstrumentation;
 import static org.hamcrest.core.IsNull.notNullValue;
 import static org.junit.Assert.assertThat;
 
 @RunWith(AndroidJUnit4.class)
 @SdkSuppress(minSdkVersion = 18)
-public class TestGoogleSlides {
+public class TestGoogleDocs {
 
     private static final int LAUNCH_TIMEOUT = 5000;
-    private static final String BASIC_SAMPLE_PACKAGE = "Slides";
+    private static final String BASIC_SAMPLE_PACKAGE = "Docs";
     private UiDevice mDevice;
 
     @Before
@@ -50,36 +50,27 @@ public class TestGoogleSlides {
     }
 
     @Test
-    public void testCreateGoogleSlide() throws UiObjectNotFoundException {
+    public void testCreateGoogleDoc() throws UiObjectNotFoundException {
 
         UiDevice mDevice = UiDevice.getInstance(getInstrumentation());
 
         UiObject allAppsButton = mDevice.findObject(new UiSelector().description("Apps list"));
         allAppsButton.click();
 
-         UiScrollable appViews = new UiScrollable(new UiSelector().scrollable(false));
-         appViews.scrollIntoView(new UiSelector().text("Slides"));
+        UiScrollable appViews = new UiScrollable(new UiSelector().scrollable(false));
+        appViews.scrollIntoView(new UiSelector().text("Docs"));
 
-        // UiScrollable appViews = new UiScrollable(new UiSelector().scrollable(false));
-        // appViews.scrollForward();
-
-        // UiScrollable scroll = new UiScrollable(new UiSelector().className("android.support.v7.widget.RecyclerView"));     // API 28
-        // UiScrollable scroll = new UiScrollable(new UiSelector().className("androidx.recyclerview.widget.RecyclerView"));  // API 29
-        UiScrollable scroll = new UiScrollable(new UiSelector().resourceId("com.google.android.apps.nexuslauncher:id/apps_list_view"));
-        scroll.scrollForward();
-
-        UiObject testingApp = mDevice.findObject(new UiSelector().text("Slides"));
+        UiObject testingApp = mDevice.findObject(new UiSelector().text("Docs"));
         testingApp.clickAndWaitForNewWindow();
 
-        UiObject button = mDevice.findObject(new UiSelector().description("New presentation menu"));
+        UiObject button = mDevice.findObject(new UiSelector().resourceId("com.google.android.apps.docs.editors.docs:id/fab_base_button"));
         button.click();
 
-        UiObject document = mDevice.findObject(new UiSelector().description("New Slides file"));
+        UiObject document = mDevice.findObject(new UiSelector().description("New document"));
         document.clickAndWaitForNewWindow();
 
-        //UiObject text = mDevice.findObject(new UiSelector().description("Subtitle"));
-        //text.click();
-        //text.setText("UI Automator");
+        UiObject check = mDevice.findObject(new UiSelector().resourceId("com.google.android.apps.docs.editors.docs:id/action_mode_close_button"));
+        check.click();
 
         UiObject close = mDevice.findObject(new UiSelector().description("Navigate up"));
         close.click();
@@ -87,28 +78,20 @@ public class TestGoogleSlides {
     }
 
     @Test
-    public void testRenameGoogleSlide() throws UiObjectNotFoundException {
+    public void testRenameGoogleDoc() throws UiObjectNotFoundException {
 
         UiDevice mDevice = UiDevice.getInstance(getInstrumentation());
 
         UiObject allAppsButton = mDevice.findObject(new UiSelector().description("Apps list"));
         allAppsButton.click();
 
-        // UiScrollable appViews = new UiScrollable(new UiSelector().scrollable(false));
-        // appViews.scrollIntoView(new UiSelector().text("Slides"));
-
         UiScrollable appViews = new UiScrollable(new UiSelector().scrollable(false));
-        appViews.scrollForward();
+        appViews.scrollIntoView(new UiSelector().text("Docs"));
 
-        // UiScrollable scroll = new UiScrollable(new UiSelector().className("android.support.v7.widget.RecyclerView"));     // API 28
-        // UiScrollable scroll = new UiScrollable(new UiSelector().className("androidx.recyclerview.widget.RecyclerView"));  // API 29
-        UiScrollable scroll = new UiScrollable(new UiSelector().resourceId("com.google.android.apps.nexuslauncher:id/apps_list_view"));
-        scroll.scrollForward();
-
-        UiObject testingApp = mDevice.findObject(new UiSelector().text("Slides"));
+        UiObject testingApp = mDevice.findObject(new UiSelector().text("Docs"));
         testingApp.clickAndWaitForNewWindow();
 
-        UiObject document = mDevice.findObject(new UiSelector().description("More actions for Untitled presentation"));
+        UiObject document = mDevice.findObject(new UiSelector().description("More actions for Untitled document"));
         document.click();
 
         UiScrollable options = new UiScrollable(new UiSelector().scrollable(false));
@@ -117,49 +100,16 @@ public class TestGoogleSlides {
         UiObject rename = mDevice.findObject(new UiSelector().text("Rename"));
         rename.clickAndWaitForNewWindow();
 
-        UiObject name = mDevice.findObject(new UiSelector().resourceId("com.google.android.apps.docs.editors.slides:id/edit_text"));
+        UiObject name = mDevice.findObject(new UiSelector().resourceId("com.google.android.apps.docs.editors.docs:id/edit_text"));
         name.setText("UI Automator");
 
-        UiObject button = mDevice.findObject(new UiSelector().resourceId("com.google.android.apps.docs.editors.slides:id/positive_button"));
+        UiObject button = mDevice.findObject(new UiSelector().resourceId("com.google.android.apps.docs.editors.docs:id/positive_button"));
         button.clickAndWaitForNewWindow();
 
     }
 
     @Test
-    public void testRemoveGoogleSlide() throws UiObjectNotFoundException {
-
-        UiDevice mDevice = UiDevice.getInstance(getInstrumentation());
-
-        UiObject allAppsButton = mDevice.findObject(new UiSelector().description("Apps list"));
-        allAppsButton.click();
-
-        // UiScrollable appViews = new UiScrollable(new UiSelector().scrollable(false));
-        // appViews.scrollIntoView(new UiSelector().text("Slides"));
-
-        UiScrollable appViews = new UiScrollable(new UiSelector().scrollable(true));
-        appViews.scrollForward();
-
-        // UiScrollable scroll = new UiScrollable(new UiSelector().className("android.support.v7.widget.RecyclerView"));     // API 28
-        // UiScrollable scroll = new UiScrollable(new UiSelector().className("androidx.recyclerview.widget.RecyclerView"));  // API 29
-        UiScrollable scroll = new UiScrollable(new UiSelector().resourceId("com.google.android.apps.nexuslauncher:id/apps_list_view"));
-        scroll.scrollForward();
-
-        UiObject testingApp = mDevice.findObject(new UiSelector().text("Slides"));
-        testingApp.clickAndWaitForNewWindow();
-
-        UiObject document = mDevice.findObject(new UiSelector().description("More actions for UI Automator"));
-        document.click();
-
-        UiScrollable options = new UiScrollable(new UiSelector().scrollable(false));
-        options.scrollToEnd(10);
-
-        UiObject remove = mDevice.findObject(new UiSelector().text("Remove"));
-        remove.clickAndWaitForNewWindow();
-
-    }
-
-    @Test
-    public void testSendCopyGoogleSlide() throws UiObjectNotFoundException {
+    public void testRemoveGoogleDoc() throws UiObjectNotFoundException {
 
         UiDevice mDevice = UiDevice.getInstance(getInstrumentation());
 
@@ -167,20 +117,41 @@ public class TestGoogleSlides {
         allAppsButton.click();
 
         UiScrollable appViews = new UiScrollable(new UiSelector().scrollable(false));
-        appViews.scrollForward();
+        appViews.scrollIntoView(new UiSelector().text("Docs"));
 
-        // UiScrollable scroll = new UiScrollable(new UiSelector().className("android.support.v7.widget.RecyclerView"));     // API 28
-        // UiScrollable scroll = new UiScrollable(new UiSelector().className("androidx.recyclerview.widget.RecyclerView"));  // API 29
-        UiScrollable scroll = new UiScrollable(new UiSelector().resourceId("com.google.android.apps.nexuslauncher:id/apps_list_view"));
-        scroll.scrollForward();
-
-        UiObject testingApp = mDevice.findObject(new UiSelector().text("Slides"));
+        UiObject testingApp = mDevice.findObject(new UiSelector().text("Docs"));
         testingApp.clickAndWaitForNewWindow();
 
         UiObject document = mDevice.findObject(new UiSelector().description("More actions for UI Automator"));
         document.click();
 
-        UiScrollable options = new UiScrollable(new UiSelector().scrollable(false));
+        UiScrollable options = new UiScrollable(new UiSelector().scrollable(true)); // API 25, 27, 29
+        // UiScrollable options = new UiScrollable(new UiSelector().scrollable(true));   // API 28
+        options.scrollToEnd(15);
+
+        UiObject remove = mDevice.findObject(new UiSelector().text("Remove"));
+        remove.clickAndWaitForNewWindow();
+
+    }
+
+    @Test
+    public void testSendCopyGoogleDoc() throws UiObjectNotFoundException {
+
+        UiDevice mDevice = UiDevice.getInstance(getInstrumentation());
+
+        UiObject allAppsButton = mDevice.findObject(new UiSelector().description("Apps list"));
+        allAppsButton.click();
+
+        UiScrollable appViews = new UiScrollable(new UiSelector().scrollable(false));
+        appViews.scrollIntoView(new UiSelector().text("Docs"));
+
+        UiObject testingApp = mDevice.findObject(new UiSelector().text("Docs"));
+        testingApp.clickAndWaitForNewWindow();
+
+        UiObject document = mDevice.findObject(new UiSelector().description("More actions for UI Automator"));
+        document.click();
+
+        UiScrollable options = new UiScrollable(new UiSelector().scrollable(true));
         options.scrollIntoView(new UiSelector().text("Send a copy"));
 
         UiObject copy = mDevice.findObject(new UiSelector().text("Send a copy"));

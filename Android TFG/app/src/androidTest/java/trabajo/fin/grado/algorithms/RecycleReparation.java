@@ -75,7 +75,7 @@ public class RecycleReparation extends BaseReparationAlgorithm{
             }
             try{
 
-                availableActions = createAction(device, seeds.nextInt());
+                availableActions = createAction(device, seeds.nextLong());
                 while (testCaseActions.size() < bugTestCase.getTestActions().size()*2 && availableActions.size() > 0) {
                     chosenAction = availableActions.get(getRandom().nextInt(availableActions.size()));
                     testCaseActions.add(chosenAction);
@@ -98,7 +98,7 @@ public class RecycleReparation extends BaseReparationAlgorithm{
                         }
                     }
 
-                    availableActions = createAction(device, seeds.nextInt());
+                    availableActions = createAction(device, seeds.nextLong());
                 }
                 closeApp(bugTestCase.getAppPackage());
             }catch(UiObjectNotFoundException ex){

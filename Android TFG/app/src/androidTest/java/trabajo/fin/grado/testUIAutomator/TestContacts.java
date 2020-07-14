@@ -1,9 +1,9 @@
-package esadrcanfer.us.alumno.autotesting.testUIAutomator;
+package trabajo.fin.grado.testUIAutomator;
 
 import android.content.Context;
-import android.support.test.InstrumentationRegistry;
-import android.support.test.filters.SdkSuppress;
-import android.support.test.runner.AndroidJUnit4;
+import androidx.test.InstrumentationRegistry;
+import androidx.test.filters.SdkSuppress;
+import androidx.test.runner.AndroidJUnit4;
 import androidx.test.uiautomator.By;
 import androidx.test.uiautomator.UiDevice;
 import androidx.test.uiautomator.UiObject;
@@ -16,7 +16,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import static android.support.test.InstrumentationRegistry.getInstrumentation;
+import static androidx.test.InstrumentationRegistry.getInstrumentation;
 import static org.hamcrest.core.IsNull.notNullValue;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
@@ -93,7 +93,7 @@ public class TestContacts {
 
         expansion.click();
 
-        UiScrollable appViews = new UiScrollable(new UiSelector().scrollable(true));
+        UiScrollable appViews = new UiScrollable(new UiSelector().scrollable(false));
         appViews.scrollIntoView(new UiSelector().text("Phone"));
 
         UiObject phone = mDevice.findObject(new UiSelector().text("Phone"));
@@ -298,7 +298,7 @@ public class TestContacts {
         UiObject testingApp = mDevice.findObject(new UiSelector().text("Contacts"));
         testingApp.clickAndWaitForNewWindow();
 
-        UiObject contact = mDevice.findObject(new UiSelector().text("Juan Parra Serna"));
+        UiObject contact = mDevice.findObject(new UiSelector().description("Antonio Macías Zambrano"));
         contact.click();
 
         UiObject options = mDevice.findObject(new UiSelector().className("android.widget.ImageButton"));

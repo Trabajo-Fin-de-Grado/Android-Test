@@ -10,8 +10,9 @@ import java.util.Map;
 
 public class ActionFactory {
 
-    public static Map<UiObject, Action> createInputActions(UiDevice device, Integer seed) {
-        TextInputGenerator generator = new TextInputGenerator(seed);
+    public static Map<UiObject, Action> createInputActions(UiDevice device, Long seed) {
+        String value = null;
+        TextInputGenerator generator = new TextInputGenerator(seed, value);
         List<UiObject> inputTexts = ElementIdentifier.findElements(device, "android.widget.EditText");
         Map<UiObject, Action> result = new HashMap<>();
         for (UiObject input : inputTexts) {
@@ -33,7 +34,7 @@ public class ActionFactory {
         return result;
     }
 
-    public static Map<UiObject, Action> createRadioActions(UiDevice device, Integer seed) {
+    public static Map<UiObject, Action> createRadioActions(UiDevice device, Long seed) {
         RadioButtonInputGenerator generator = new RadioButtonInputGenerator(seed);
         Map<UiObject, Action> result = new HashMap<>();
         List<UiObject> buttons = ElementIdentifier.findElements(device, "android.widget.RadioGroup");
@@ -53,7 +54,7 @@ public class ActionFactory {
 
     }
 
-    public static Map<UiObject, Action> createActions(UiDevice device, Integer seed) {
+    public static Map<UiObject, Action> createActions(UiDevice device, Long seed) {
         Map<UiObject, Action> actions = new HashMap<>();
         actions.putAll(ActionFactory.createButtonActions(device));
         actions.putAll(ActionFactory.createInputActions(device, seed));

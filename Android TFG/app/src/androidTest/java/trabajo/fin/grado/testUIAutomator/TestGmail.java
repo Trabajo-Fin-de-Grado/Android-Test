@@ -1,9 +1,9 @@
-package esadrcanfer.us.alumno.autotesting.testUIAutomator;
+package trabajo.fin.grado.testUIAutomator;
 
 import android.content.Context;
-import android.support.test.InstrumentationRegistry;
-import android.support.test.filters.SdkSuppress;
-import android.support.test.runner.AndroidJUnit4;
+import androidx.test.InstrumentationRegistry;
+import androidx.test.filters.SdkSuppress;
+import androidx.test.runner.AndroidJUnit4;
 import androidx.test.uiautomator.By;
 import androidx.test.uiautomator.UiDevice;
 import androidx.test.uiautomator.UiObject;
@@ -16,7 +16,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import static android.support.test.InstrumentationRegistry.getInstrumentation;
+import static androidx.test.InstrumentationRegistry.getInstrumentation;
 import static org.hamcrest.core.IsNull.notNullValue;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
@@ -163,10 +163,8 @@ public class TestGmail {
         UiObject sent = mDevice.findObject(new UiSelector().text("Sent"));
         sent.clickAndWaitForNewWindow();
 
-        // UiObject body = mDevice.findObject(new UiSelector().text("me"));
-        // UiObject body = mDevice.findObject(new UiSelector().descriptionContains("me"));
-        UiObject body = mDevice.findObject(new UiSelector().resourceId("com.google.android.gm:id/viewified_conversation_item_view").index(1));
-        body.click();
+        UiObject body = mDevice.findObject(new UiSelector().text("me"));
+        body.longClick();
 
         UiObject delete = mDevice.findObject(new UiSelector().description("Delete"));
         delete.clickAndWaitForNewWindow();
@@ -187,7 +185,7 @@ public class TestGmail {
         testingApp.clickAndWaitForNewWindow();
 
         UiObject options = mDevice.findObject(new UiSelector().description("Open navigation drawer"));
-        options.click();
+        options.clickAndWaitForNewWindow();
 
         UiScrollable scroll = new UiScrollable(new UiSelector().scrollable(false));
         scroll.scrollIntoView(new UiSelector().text("Trash"));
@@ -195,11 +193,11 @@ public class TestGmail {
         UiObject sent = mDevice.findObject(new UiSelector().text("Trash"));
         sent.clickAndWaitForNewWindow();
 
-        // UiObject trash = mDevice.findObject(new UiSelector().resourceId("com.google.android.gm:id/empty_trash_spam_action")); // API 25
+        // UiObject trash = mDevice.findObject(new UiSelector().text("EMPTY TRASH NOW"));
         UiObject trash = mDevice.findObject(new UiSelector().text("Empty trash now"));
         trash.clickAndWaitForNewWindow();
 
-        // UiObject confirm = mDevice.findObject(new UiSelector().resourceId("android:id/button1")); // API 25
+        // UiObject confirm = mDevice.findObject(new UiSelector().text("EMPTY"));
         UiObject confirm = mDevice.findObject(new UiSelector().text("Empty"));
         confirm.clickAndWaitForNewWindow();
     }

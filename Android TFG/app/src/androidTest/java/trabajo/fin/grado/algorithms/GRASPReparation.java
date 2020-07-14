@@ -170,7 +170,7 @@ public class GRASPReparation extends BaseReparationAlgorithm {
     }
 
     public List<Action> identifyAvailableActions(UiDevice device){
-        return createAction(device, random.nextInt());
+        return createAction(device, random.nextLong());
     }
 
     public List<Action> chooseRestrictedCandidatesList(UiDevice device, List<Action> availableActions, List<Action> testCaseActions) {

@@ -1,8 +1,8 @@
-package esadrcanfer.us.alumno.autotesting.testUIAutomator;
+package trabajo.fin.grado.testUIAutomator;
 
-import android.support.test.InstrumentationRegistry;
-import android.support.test.filters.SdkSuppress;
-import android.support.test.runner.AndroidJUnit4;
+import androidx.test.InstrumentationRegistry;
+import androidx.test.filters.SdkSuppress;
+import androidx.test.runner.AndroidJUnit4;
 import androidx.test.uiautomator.By;
 import androidx.test.uiautomator.UiDevice;
 import androidx.test.uiautomator.UiObject;
@@ -15,7 +15,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import static android.support.test.InstrumentationRegistry.getInstrumentation;
+import static androidx.test.InstrumentationRegistry.getInstrumentation;
 import static org.hamcrest.core.IsNull.notNullValue;
 import static org.junit.Assert.assertThat;
 
@@ -57,16 +57,11 @@ public class TestGoogleSlides {
         UiObject allAppsButton = mDevice.findObject(new UiSelector().description("Apps list"));
         allAppsButton.click();
 
-         UiScrollable appViews = new UiScrollable(new UiSelector().scrollable(false));
-         appViews.scrollIntoView(new UiSelector().text("Slides"));
-
         // UiScrollable appViews = new UiScrollable(new UiSelector().scrollable(false));
-        // appViews.scrollForward();
+        // appViews.scrollIntoView(new UiSelector().text("Slides"));
 
-        // UiScrollable scroll = new UiScrollable(new UiSelector().className("android.support.v7.widget.RecyclerView"));     // API 28
-        // UiScrollable scroll = new UiScrollable(new UiSelector().className("androidx.recyclerview.widget.RecyclerView"));  // API 29
-        UiScrollable scroll = new UiScrollable(new UiSelector().resourceId("com.google.android.apps.nexuslauncher:id/apps_list_view"));
-        scroll.scrollForward();
+        UiScrollable appViews = new UiScrollable(new UiSelector().scrollable(false));
+        appViews.scrollForward();
 
         UiObject testingApp = mDevice.findObject(new UiSelector().text("Slides"));
         testingApp.clickAndWaitForNewWindow();
@@ -74,7 +69,7 @@ public class TestGoogleSlides {
         UiObject button = mDevice.findObject(new UiSelector().description("New presentation menu"));
         button.click();
 
-        UiObject document = mDevice.findObject(new UiSelector().description("New Slides file"));
+        UiObject document = mDevice.findObject(new UiSelector().description("New presentation"));
         document.clickAndWaitForNewWindow();
 
         //UiObject text = mDevice.findObject(new UiSelector().description("Subtitle"));
@@ -99,11 +94,6 @@ public class TestGoogleSlides {
 
         UiScrollable appViews = new UiScrollable(new UiSelector().scrollable(false));
         appViews.scrollForward();
-
-        // UiScrollable scroll = new UiScrollable(new UiSelector().className("android.support.v7.widget.RecyclerView"));     // API 28
-        // UiScrollable scroll = new UiScrollable(new UiSelector().className("androidx.recyclerview.widget.RecyclerView"));  // API 29
-        UiScrollable scroll = new UiScrollable(new UiSelector().resourceId("com.google.android.apps.nexuslauncher:id/apps_list_view"));
-        scroll.scrollForward();
 
         UiObject testingApp = mDevice.findObject(new UiSelector().text("Slides"));
         testingApp.clickAndWaitForNewWindow();
@@ -139,11 +129,6 @@ public class TestGoogleSlides {
         UiScrollable appViews = new UiScrollable(new UiSelector().scrollable(true));
         appViews.scrollForward();
 
-        // UiScrollable scroll = new UiScrollable(new UiSelector().className("android.support.v7.widget.RecyclerView"));     // API 28
-        // UiScrollable scroll = new UiScrollable(new UiSelector().className("androidx.recyclerview.widget.RecyclerView"));  // API 29
-        UiScrollable scroll = new UiScrollable(new UiSelector().resourceId("com.google.android.apps.nexuslauncher:id/apps_list_view"));
-        scroll.scrollForward();
-
         UiObject testingApp = mDevice.findObject(new UiSelector().text("Slides"));
         testingApp.clickAndWaitForNewWindow();
 
@@ -168,11 +153,6 @@ public class TestGoogleSlides {
 
         UiScrollable appViews = new UiScrollable(new UiSelector().scrollable(false));
         appViews.scrollForward();
-
-        // UiScrollable scroll = new UiScrollable(new UiSelector().className("android.support.v7.widget.RecyclerView"));     // API 28
-        // UiScrollable scroll = new UiScrollable(new UiSelector().className("androidx.recyclerview.widget.RecyclerView"));  // API 29
-        UiScrollable scroll = new UiScrollable(new UiSelector().resourceId("com.google.android.apps.nexuslauncher:id/apps_list_view"));
-        scroll.scrollForward();
 
         UiObject testingApp = mDevice.findObject(new UiSelector().text("Slides"));
         testingApp.clickAndWaitForNewWindow();

@@ -1,8 +1,8 @@
-package esadrcanfer.us.alumno.autotesting.testUIAutomator;
+package trabajo.fin.grado.testUIAutomator;
 
-import android.support.test.InstrumentationRegistry;
-import android.support.test.filters.SdkSuppress;
-import android.support.test.runner.AndroidJUnit4;
+import androidx.test.InstrumentationRegistry;
+import androidx.test.filters.SdkSuppress;
+import androidx.test.runner.AndroidJUnit4;
 import androidx.test.uiautomator.By;
 import androidx.test.uiautomator.UiDevice;
 import androidx.test.uiautomator.UiObject;
@@ -15,7 +15,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import static android.support.test.InstrumentationRegistry.getInstrumentation;
+import static androidx.test.InstrumentationRegistry.getInstrumentation;
 import static org.hamcrest.core.IsNull.notNullValue;
 import static org.junit.Assert.assertThat;
 
@@ -57,9 +57,7 @@ public class TestPlayStore {
         UiObject allAppsButton = mDevice.findObject(new UiSelector().description("Apps list"));
         allAppsButton.click();
 
-        // UiScrollable appViews = new UiScrollable(new UiSelector().scrollable(true)); // API 25 y 27
-        UiScrollable appViews = new UiScrollable(new UiSelector().scrollable(false));   // API 28 y 29
-        // appViews.scrollIntoView(new UiSelector().text("Play Store"));
+        UiScrollable appViews = new UiScrollable(new UiSelector().scrollable(true));
         appViews.scrollForward();
 
         UiObject testingApp = mDevice.findObject(new UiSelector().text("Play Store"));
@@ -87,9 +85,7 @@ public class TestPlayStore {
         UiObject allAppsButton = mDevice.findObject(new UiSelector().description("Apps list"));
         allAppsButton.click();
 
-        // UiScrollable appViews = new UiScrollable(new UiSelector().scrollable(true)); // API 25 y 27
-        UiScrollable appViews = new UiScrollable(new UiSelector().scrollable(false));   // API 28 y 29
-        // appViews.scrollIntoView(new UiSelector().text("Play Store"));
+        UiScrollable appViews = new UiScrollable(new UiSelector().scrollable(true));
         appViews.scrollForward();
 
         UiObject testingApp = mDevice.findObject(new UiSelector().text("Play Store"));
@@ -120,10 +116,8 @@ public class TestPlayStore {
         UiObject allAppsButton = mDevice.findObject(new UiSelector().description("Apps list"));
         allAppsButton.click();
 
-        // UiScrollable appViews = new UiScrollable(new UiSelector().scrollable(true)); // API 25 y 27
-        UiScrollable appViews = new UiScrollable(new UiSelector().scrollable(false));   // API 28 y 29
-        // appViews.scrollIntoView(new UiSelector().text("Play Store"));
-        appViews.scrollForward();
+        UiScrollable appViews = new UiScrollable(new UiSelector().scrollable(false));
+        appViews.scrollIntoView(new UiSelector().text("Play Store"));
 
         UiObject testingApp = mDevice.findObject(new UiSelector().text("Play Store"));
         testingApp.clickAndWaitForNewWindow();
@@ -153,10 +147,8 @@ public class TestPlayStore {
         UiObject allAppsButton = mDevice.findObject(new UiSelector().description("Apps list"));
         allAppsButton.click();
 
-        // UiScrollable appViews = new UiScrollable(new UiSelector().scrollable(true)); // API 25 y 27
-        UiScrollable appViews = new UiScrollable(new UiSelector().scrollable(false));   // API 28 y 29
-        // appViews.scrollIntoView(new UiSelector().text("Play Store"));
-        appViews.scrollForward();
+        UiScrollable appViews = new UiScrollable(new UiSelector().scrollable(false));
+        appViews.scrollIntoView(new UiSelector().text("Play Store"));
 
         UiObject testingApp = mDevice.findObject(new UiSelector().text("Play Store"));
         testingApp.clickAndWaitForNewWindow();
@@ -195,10 +187,8 @@ public class TestPlayStore {
         UiObject allAppsButton = mDevice.findObject(new UiSelector().description("Apps list"));
         allAppsButton.click();
 
-        // UiScrollable appViews = new UiScrollable(new UiSelector().scrollable(true)); // API 25 y 27
-        UiScrollable appViews = new UiScrollable(new UiSelector().scrollable(false));   // API 28 y 29
-        // appViews.scrollIntoView(new UiSelector().text("Play Store"));
-        appViews.scrollForward();
+        UiScrollable appViews = new UiScrollable(new UiSelector().scrollable(false));
+        appViews.scrollIntoView(new UiSelector().text("Play Store"));
 
         UiObject testingApp = mDevice.findObject(new UiSelector().text("Play Store"));
         testingApp.clickAndWaitForNewWindow();

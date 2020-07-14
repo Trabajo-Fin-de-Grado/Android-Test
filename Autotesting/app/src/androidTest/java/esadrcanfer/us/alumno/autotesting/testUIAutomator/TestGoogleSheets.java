@@ -60,6 +60,11 @@ public class TestGoogleSheets {
         UiScrollable appViews = new UiScrollable(new UiSelector().scrollable(false));
         appViews.scrollForward();
 
+        // UiScrollable scroll = new UiScrollable(new UiSelector().className("android.support.v7.widget.RecyclerView"));     // API 28
+        // UiScrollable scroll = new UiScrollable(new UiSelector().className("androidx.recyclerview.widget.RecyclerView"));  // API 29
+        UiScrollable scroll = new UiScrollable(new UiSelector().resourceId("com.google.android.apps.nexuslauncher:id/apps_list_view"));
+        scroll.scrollForward();
+
         UiObject testingApp = mDevice.findObject(new UiSelector().text("Sheets"));
         testingApp.clickAndWaitForNewWindow();
 
@@ -84,6 +89,11 @@ public class TestGoogleSheets {
 
         UiScrollable appViews = new UiScrollable(new UiSelector().scrollable(false));
         appViews.scrollForward();
+
+        // UiScrollable scroll = new UiScrollable(new UiSelector().className("android.support.v7.widget.RecyclerView"));     // API 28
+        // UiScrollable scroll = new UiScrollable(new UiSelector().className("androidx.recyclerview.widget.RecyclerView"));  // API 29
+        UiScrollable scroll = new UiScrollable(new UiSelector().resourceId("com.google.android.apps.nexuslauncher:id/apps_list_view"));
+        scroll.scrollForward();
 
         UiObject testingApp = mDevice.findObject(new UiSelector().text("Sheets"));
         testingApp.clickAndWaitForNewWindow();
@@ -116,6 +126,11 @@ public class TestGoogleSheets {
         UiScrollable appViews = new UiScrollable(new UiSelector().scrollable(false));
         appViews.scrollForward();
 
+        // UiScrollable scroll = new UiScrollable(new UiSelector().className("android.support.v7.widget.RecyclerView"));     // API 28
+        // UiScrollable scroll = new UiScrollable(new UiSelector().className("androidx.recyclerview.widget.RecyclerView"));  // API 29
+        UiScrollable scroll = new UiScrollable(new UiSelector().resourceId("com.google.android.apps.nexuslauncher:id/apps_list_view"));
+        scroll.scrollForward();
+
         UiObject testingApp = mDevice.findObject(new UiSelector().text("Sheets"));
         testingApp.clickAndWaitForNewWindow();
 
@@ -140,6 +155,11 @@ public class TestGoogleSheets {
 
         UiScrollable appViews = new UiScrollable(new UiSelector().scrollable(false));
         appViews.scrollForward();
+
+        // UiScrollable scroll = new UiScrollable(new UiSelector().className("android.support.v7.widget.RecyclerView"));     // API 28
+        // UiScrollable scroll = new UiScrollable(new UiSelector().className("androidx.recyclerview.widget.RecyclerView"));  // API 29
+        UiScrollable scroll = new UiScrollable(new UiSelector().resourceId("com.google.android.apps.nexuslauncher:id/apps_list_view"));
+        scroll.scrollForward();
 
         UiObject testingApp = mDevice.findObject(new UiSelector().text("Sheets"));
         testingApp.clickAndWaitForNewWindow();

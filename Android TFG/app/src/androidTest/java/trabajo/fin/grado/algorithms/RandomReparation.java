@@ -56,7 +56,7 @@ public class RandomReparation extends BaseReparationAlgorithm{
             Random seeds = new Random(seed);
             startApp(appPackage);
             testCaseActions = new ArrayList<>();
-            availableActions = createAction(device, seeds.nextInt());
+            availableActions = createAction(device, seeds.nextLong());
             List<String> initialState = labelsDetection();
             while (testCaseActions.size() < bugTestCase.getTestActions().size()*2 && availableActions.size() > 0) {
                 chosenAction = availableActions.get(getRandom().nextInt(availableActions.size()));
@@ -79,7 +79,7 @@ public class RandomReparation extends BaseReparationAlgorithm{
                         return res;
                     }
                 }
-                availableActions = createAction(device, seeds.nextInt());
+                availableActions = createAction(device, seeds.nextLong());
             }
             closeApp(bugTestCase.getAppPackage());
             i++;

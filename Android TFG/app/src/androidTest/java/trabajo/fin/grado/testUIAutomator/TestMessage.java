@@ -1,8 +1,8 @@
-package esadrcanfer.us.alumno.autotesting.testUIAutomator;
+package trabajo.fin.grado.testUIAutomator;
 
-import android.support.test.InstrumentationRegistry;
-import android.support.test.filters.SdkSuppress;
-import android.support.test.runner.AndroidJUnit4;
+import androidx.test.InstrumentationRegistry;
+import androidx.test.filters.SdkSuppress;
+import androidx.test.runner.AndroidJUnit4;
 import androidx.test.uiautomator.By;
 import androidx.test.uiautomator.UiDevice;
 import androidx.test.uiautomator.UiObject;
@@ -15,7 +15,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import static android.support.test.InstrumentationRegistry.getInstrumentation;
+import static androidx.test.InstrumentationRegistry.getInstrumentation;
 import static org.hamcrest.core.IsNull.notNullValue;
 import static org.junit.Assert.assertThat;
 
@@ -119,8 +119,8 @@ public class TestMessage {
         UiObject emoji = mDevice.findObject(new UiSelector().resourceId("com.google.android.apps.messaging:id/emoji_image"));
         emoji.click();
 
-        UiObject send = mDevice.findObject(new UiSelector().text("SMS"));
-        send.clickAndWaitForNewWindow();
+        UiObject enviar = mDevice.findObject(new UiSelector().resourceId("com.google.android.apps.messaging:id/self_send_icon"));
+        enviar.clickAndWaitForNewWindow();
 
     }
 

@@ -1,9 +1,9 @@
-package esadrcanfer.us.alumno.autotesting.testUIAutomator;
+package trabajo.fin.grado.testUIAutomator;
 
 import android.content.Context;
-import android.support.test.InstrumentationRegistry;
-import android.support.test.filters.SdkSuppress;
-import android.support.test.runner.AndroidJUnit4;
+import androidx.test.InstrumentationRegistry;
+import androidx.test.filters.SdkSuppress;
+import androidx.test.runner.AndroidJUnit4;
 import androidx.test.uiautomator.By;
 import androidx.test.uiautomator.UiDevice;
 import androidx.test.uiautomator.UiObject;
@@ -16,7 +16,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import static android.support.test.InstrumentationRegistry.getInstrumentation;
+import static androidx.test.InstrumentationRegistry.getInstrumentation;
 import static org.hamcrest.core.IsNull.notNullValue;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
@@ -157,8 +157,9 @@ public class TestGoogleCalendar {
         UiObject day = mDevice.findObject(new UiSelector().className("android.view.View").index(9));
         day.click();
 
-        UiObject event = mDevice.findObject(new UiSelector().descriptionContains("UI Automator"));
+        UiObject event = mDevice.findObject(new UiSelector().descriptionStartsWith("UI Automator"));
         event.click();
+       // event.click();
 
         UiObject edit = mDevice.findObject(new UiSelector().description("Edit"));
         edit.click();
@@ -220,8 +221,9 @@ public class TestGoogleCalendar {
         UiObject day = mDevice.findObject(new UiSelector().className("android.view.View").index(9));
         day.click();
 
-        UiObject event = mDevice.findObject(new UiSelector().descriptionContains("UI Automator"));
+        UiObject event = mDevice.findObject(new UiSelector().descriptionStartsWith("UI Automator"));
         event.click();
+        // event.click();
 
         UiObject options = mDevice.findObject(new UiSelector().description("More options"));
         options.click();
